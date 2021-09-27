@@ -17,7 +17,7 @@ public class SPTV20ArrayPro {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Массивы в Java
+        System.out.println("Массивы");
         int[]nums;
         nums = new int [5];
 //        nums[0] = 1;
@@ -48,6 +48,32 @@ public class SPTV20ArrayPro {
         System.out.println("nums2 = " + Arrays.toString(nums2));
         nums = nums2;
         System.out.println("nums = " + Arrays.toString(nums));
+        
+        System.out.println("Многомерные массивы");
+        int[][] matrix = new int[5][5];
+        
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                matrix[i][j]=i*j;
+                
+            }
+            
+        }
+        int[] sumCols = new int [5];
+        for (int i = 0; i < matrix.length; i++) {
+            int sum = 0;
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.printf("%4d", matrix[i][j]);
+                sum += matrix[i][j];
+                sumCols[j]+=matrix[i][j];
+            }
+            System.out.println(" | сумма строки = " + sum);
+        }
+        System.out.println("  -- сумма столбцов --");
+        for (int i = 0; i < sumCols.length; i++) {
+            System.out.printf("%4d", sumCols[i]);
+        }
+        System.out.println("");
     }
     
 }
